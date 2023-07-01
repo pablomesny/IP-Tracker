@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    @font-face {
+        font-family: 'Rubik';
+        src: url('/fonts/Rubik-Regular.woff2') format('woff2');
+    }
+
+    .font-rubik {
+        font-family: 'Rubik', sans-serif;
+    }
+}
+
+@layer components {
+    .divider {
+        @apply right-divider h-16 self-center;
+    }
+}
+
+@layer utilities {
+    .right-divider {
+        border-right: 1px solid gainsboro;
+    }
+}
