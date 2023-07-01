@@ -12,12 +12,11 @@ export const Map = () => {
       <MapContainer 
         style={{ width: '100vw', height: 'calc(100vh - 208px)' }}
         center={[51.505, -0.09]} 
-        zoom={50} 
-        scrollWheelZoom={false}
+        zoom={17} 
+        scrollWheelZoom
         
       >
         <TileLayer
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://tiles.stadiamaps.com/tiles/osm_bright/{z}/{x}/{y}{r}.png"
         />
         <Marker position={[51.505, -0.09]} icon={ CustomMarker }>
