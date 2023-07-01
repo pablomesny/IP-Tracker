@@ -1,6 +1,6 @@
 export const IPInfo = () => {
   return (
-    <div className='flex flex-row relative -bottom-6 h-32 shadow-md w-10/12 rounded-xl overflow-hidden bg-white'>
+    <div className='flex flex-row relative -bottom-6 h-32 shadow-md w-10/12 rounded-xl overflow-hidden bg-white z-full'>
       <div className='bg-white h-full w-1/4 pl-6 pt-7'>
         <h2 className='text-2xs font-rubik text-dark-gray font-bold tracking-widest'>
                 IP ADDRESS

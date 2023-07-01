@@ -23,4 +23,8 @@
     .right-divider {
         border-right: 1px solid gainsboro;
     }
+
+    .z-full {
+        z-index: 9999;
+    }
 }
