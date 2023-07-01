@@ -3,7 +3,7 @@ import { Icon } from 'leaflet';
 
 const CustomMarker = new Icon({
   iconUrl: '/icons/icon-location.svg',
-  iconSize: [35, 40]
+  iconSize: [40, 45]
 });
 
 export const Map = () => {
@@ -18,7 +18,7 @@ export const Map = () => {
       >
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          url="https://tiles.stadiamaps.com/tiles/osm_bright/{z}/{x}/{y}{r}.png"
         />
         <Marker position={[51.505, -0.09]} icon={ CustomMarker }>
           <Popup>
