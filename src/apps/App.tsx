@@ -1,9 +1,9 @@
-import { IPTrackerLayout } from "./IPTracker/layout/IPTrackerLayout";
+import { IPTrackerLayout } from './components/layout/IPTrackerLayout';
 
 function App() {
   return (
     <IPTrackerLayout />
-  )
+  );
 }
 
 export default App;
