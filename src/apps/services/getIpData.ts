@@ -1,8 +1,9 @@
-const API_KEY = process.env.REACT_APP_IP_API_KEY;
+import { IP_API_KEY } from '../constants/constants';
 
 export const getIpData = async (ip: string) => {
   const res = await fetch(
-    `https://geo.ipify.org/api/v2/country,city?${API_KEY}=at_w8nq8rfDSZBlND9WA1XJL5Q2YaFcV&ipAddress=${ip}`
+    `https://geo.ipify.org/api/v2/country,city?apiKey=${IP_API_KEY}&ipAddress=${ip}`
   );
-  return res.json();
+  const data = await res.json();
+  return data;
 };
