@@ -1,6 +1,14 @@
+import { FC } from 'react';
 import { IPInfo, Search } from './components';
+import PropTypes from 'prop-types';
+import { IPData } from '../../interfaces/IPData';
 
-export const Header = () => {
+interface Props {
+  ipData: IPData | null;
+  handleChangeIpAddress: ( ipAddress: string ) => void;
+}
+
+export const Header: FC<Props> = ({ ipData, handleChangeIpAddress }) => {
   return (
     <header className='bg-blue-pattern bg-cover h-52 w-100'>
       <div className='flex flex-col items-center pt-5'>
@@ -8,10 +16,14 @@ export const Header = () => {
                 IP Address Tracker
         </h1>
 
-        <Search />
+        <Search handleChangeIpAddress={ handleChangeIpAddress } />
 
-        <IPInfo />
+        <IPInfo ipData={ ipData } />
       </div>
     </header>
   );
+};
+
+Header.propTypes = {
+  handleChangeIpAddress: PropTypes.func.isRequired
 };
