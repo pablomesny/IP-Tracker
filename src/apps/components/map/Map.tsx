@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, useState, useEffect } from 'react';
 import { Icon, LatLngExpression } from 'leaflet';
 import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
 import { IPData } from '../../interfaces/IPData';
@@ -20,14 +20,22 @@ const ChangeMapView = ({ coords }: { coords: LatLngExpression }) => {
 
 export const Map: FC<Props> = ({ ipData }) => {
 
+  const [ currentPosition, setCurrentPosition ] = useState<LatLngExpression | null>(null);
+
   const position = ipData ? [ipData.location.lat, ipData.location.lng] : [51.505, -0.09];
 
+  useEffect(() => {
+    navigator.geolocation.getCurrentPosition((position) => {
+      const { latitude, longitude } = position.coords;
+      setCurrentPosition([latitude, longitude] as LatLngExpression);
+    });
+  }, []);
 
   return (
     <main>
       <MapContainer 
         style={{ width: '100vw', height: 'calc(100vh - 208px)' }}
-        center={position as LatLngExpression} 
+        center={currentPosition ?? position as LatLngExpression} 
         zoom={17} 
         scrollWheelZoom
         
@@ -35,8 +43,8 @@ export const Map: FC<Props> = ({ ipData }) => {
         <TileLayer
           url='https://tiles.stadiamaps.com/tiles/osm_bright/{z}/{x}/{y}{r}.png'
         />
-        <ChangeMapView coords={position} />
-        <Marker position={position as LatLngExpression} icon={ CustomMarker }>
+        <ChangeMapView coords={currentPosition ?? position as LatLngExpression} />
+        <Marker position={currentPosition ?? position as LatLngExpression} icon={ CustomMarker }>
           <Popup>
             asd
           </Popup>
