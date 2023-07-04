@@ -20,22 +20,13 @@ const ChangeMapView = ({ coords }: { coords: LatLngExpression }) => {
 
 export const Map: FC<Props> = ({ ipData }) => {
 
-  const [ currentPosition, setCurrentPosition ] = useState<LatLngExpression | null>(null);
-
   const position: LatLngExpression = ipData ? [ipData.location.lat, ipData.location.lng] : [51.505, -0.09];
-
-  useEffect(() => {
-    navigator.geolocation.getCurrentPosition((position) => {
-      const { latitude, longitude } = position.coords;
-      setCurrentPosition([latitude, longitude] as LatLngExpression);
-    });
-  }, []);
 
   return (
     <main>
       <MapContainer 
         style={{ width: '100vw', height: 'calc(100vh - 208px)' }}
-        center={currentPosition ?? position} 
+        center={position} 
         zoom={17} 
         scrollWheelZoom
         
@@ -43,8 +34,8 @@ export const Map: FC<Props> = ({ ipData }) => {
         <TileLayer
           url='https://tiles.stadiamaps.com/tiles/osm_bright/{z}/{x}/{y}{r}.png'
         />
-        <ChangeMapView coords={currentPosition ?? position} />
-        <Marker position={currentPosition ?? position} icon={ CustomMarker } />
+        <ChangeMapView coords={position} />
+        <Marker position={position} icon={ CustomMarker } />
       </MapContainer>
     </main>
   );

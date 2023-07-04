@@ -8,14 +8,20 @@ export const useIpData = () => {
   const [ ipAddress, setIpAddress ] = useState<string>('');
   
   useEffect(() => {
+    const abortController = new AbortController();
+    const { signal } = abortController;
     const getIpDataFromApi = async () => {
-      const data = await getIpData( ipAddress );
+      const data = await getIpData( ipAddress, signal );
       
       if( !ipAddress ) setIpAddress( data.ip );
       setIpData(data);
     };
 
     getIpDataFromApi();
+
+    return () => {
+      abortController.abort();
+    };
   }, [ipAddress]);
 
   const handleChangeIpAddress = ( ipAddress: string ): void => {
