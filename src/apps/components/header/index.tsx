@@ -1,6 +1,5 @@
 import { FC } from 'react';
 import { IPInfo, Search } from './components';
-import PropTypes from 'prop-types';
 import { IPData } from '../../interfaces/IPData';
 
 interface Props {
@@ -22,8 +21,4 @@ export const Header: FC<Props> = ({ ipData, handleChangeIpAddress }) => {
       </div>
     </header>
   );
-};
-
-Header.propTypes = {
-  handleChangeIpAddress: PropTypes.func.isRequired
 };
