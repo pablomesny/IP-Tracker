@@ -1,6 +1,6 @@
 import { FC, useState, useEffect } from 'react';
 import { Icon, LatLngExpression } from 'leaflet';
-import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
+import { MapContainer, TileLayer, Marker, useMap } from 'react-leaflet';
 import { IPData } from '../../interfaces/IPData';
 
 interface Props {
@@ -44,11 +44,7 @@ export const Map: FC<Props> = ({ ipData }) => {
           url='https://tiles.stadiamaps.com/tiles/osm_bright/{z}/{x}/{y}{r}.png'
         />
         <ChangeMapView coords={currentPosition ?? position as LatLngExpression} />
-        <Marker position={currentPosition ?? position as LatLngExpression} icon={ CustomMarker }>
-          <Popup>
-            asd
-          </Popup>
-        </Marker>
+        <Marker position={currentPosition ?? position as LatLngExpression} icon={ CustomMarker } />
       </MapContainer>
     </main>
   );

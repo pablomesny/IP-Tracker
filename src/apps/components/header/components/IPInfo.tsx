@@ -6,7 +6,6 @@ interface Props {
 }
 
 export const IPInfo: FC<Props> = ({ ipData }) => {
-
   return (
     <div className='flex flex-row relative -bottom-6 h-32 shadow-md w-10/12 rounded-xl overflow-hidden bg-white z-full'>
       <div className='bg-white h-full w-1/4 pl-6 pt-7'>
