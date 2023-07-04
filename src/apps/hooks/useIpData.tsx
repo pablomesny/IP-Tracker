@@ -10,6 +10,8 @@ export const useIpData = () => {
   useEffect(() => {
     const getIpDataFromApi = async () => {
       const data = await getIpData( ipAddress );
+      
+      if( !ipAddress ) setIpAddress( data.ip );
       setIpData(data);
     };
 
