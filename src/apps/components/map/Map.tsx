@@ -1,4 +1,4 @@
-import { FC, useState, useEffect } from 'react';
+import { FC } from 'react';
 import { Icon, LatLngExpression } from 'leaflet';
 import { MapContainer, TileLayer, Marker, useMap } from 'react-leaflet';
 import { IPData } from '../../interfaces/IPData';

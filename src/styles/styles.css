@@ -17,6 +17,38 @@
     .divider {
         @apply right-divider h-16 self-center;
     }
+
+    .ip-info__container {
+        @apply flex flex-row relative -bottom-6 h-32 shadow-md w-10/12 rounded-xl overflow-hidden bg-white z-full;
+    }
+
+    .ip-info__item {
+        @apply bg-white h-full w-1/4 pl-6 pt-7;
+    }
+
+    .ip-info__title {
+        @apply text-2xs font-rubik text-dark-gray font-bold tracking-widest;
+    }
+
+    .ip-info__content {
+        @apply block mt-2 font-bold font-rubik text-xl text-very-dark-gray tracking-wide w-2/3;
+    }
+
+    .search__container {
+        @apply flex flex-row h-12 justify-center max-w-md w-full rounded-xl overflow-hidden mt-5;
+    }
+
+    .search__input {
+        @apply flex-1 pl-6 font-rubik text-sm;
+    }
+
+    .search__button {
+        @apply bg-black w-12;
+    }
+
+    .search__button__icon {
+        @apply mx-auto w-2.5 h-2.5;
+    }
 }
 
 @layer utilities {

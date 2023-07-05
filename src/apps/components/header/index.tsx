@@ -1,6 +1,6 @@
 import { FC } from 'react';
-import { IPInfo, Search } from './components';
 import { IPData } from '../../interfaces/IPData';
+import { IPInfo, Search } from './components';
 
 interface Props {
   ipData: IPData | null;

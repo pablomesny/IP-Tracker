@@ -14,9 +14,9 @@ export const Search: FC<Props> = ({ handleChangeIpAddress }) => {
   };
 
   return (
-    <form className='flex flex-row h-12 justify-center max-w-md w-full rounded-xl overflow-hidden mt-5'>
+    <form className='search__container'>
       <input
-        className='flex-1 pl-6 font-rubik text-sm'
+        className='search__input'
         type="text" 
         placeholder="Seach for any IP address or domain"
         value={ inputValue }
@@ -25,9 +25,9 @@ export const Search: FC<Props> = ({ handleChangeIpAddress }) => {
 
       <button 
         onClick={ handleSubmit }
-        className='bg-black w-12'
+        className='search__button'
       >
-        <img src="/icons/icon-arrow.svg" alt="arrow" className="mx-auto w-2.5 h-2.5" />
+        <img src="/icons/icon-arrow.svg" alt="arrow" className="search__button__icon" />
       </button>
     </form>
   );
