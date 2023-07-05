@@ -1,0 +1,1 @@
+export const IP_API_KEY = 'at_w8nq8rfDSZBlND9WA1XJL5Q2YaFcV';
