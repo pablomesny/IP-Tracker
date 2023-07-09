@@ -2,9 +2,10 @@ import { FC, MouseEvent, useState } from 'react';
 
 interface Props {
   handleChangeIpAddress: ( ipAddress: string ) => void;
+  isLoading: boolean;
 }
 
-export const Search: FC<Props> = ({ handleChangeIpAddress }) => {
+export const Search: FC<Props> = ({ handleChangeIpAddress, isLoading }) => {
 
   const [ inputValue, setInputValue ] = useState('');
 
@@ -25,6 +26,7 @@ export const Search: FC<Props> = ({ handleChangeIpAddress }) => {
 
       <button 
         onClick={ handleSubmit }
+        disabled={ isLoading }
         className='search__button'
       >
         <img src="/icons/icon-arrow.svg" alt="arrow" className="search__button__icon" />
